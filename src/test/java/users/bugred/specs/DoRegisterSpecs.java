@@ -10,7 +10,7 @@ import static io.restassured.http.ContentType.JSON;
 
 public class DoRegisterSpecs {
     public static RequestSpecification register = with()
-            .basePath("/tasks/rest/doregister")
+            .basePath("/rest/doregister")
             .log().uri()
             .log().body()
             .contentType(JSON);

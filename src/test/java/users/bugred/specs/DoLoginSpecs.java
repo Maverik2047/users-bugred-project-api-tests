@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.is;
 
 public class DoLoginSpecs {
     public static RequestSpecification loginRequest = with()
-            .basePath("/tasks/rest/dologin")
+            .basePath("/rest/dologin")
             .log().uri()
             .log().body()
             .contentType(JSON);

@@ -7,19 +7,16 @@ import io.restassured.specification.ResponseSpecification;
 
 import static io.restassured.RestAssured.with;
 import static io.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.is;
 
-
-public class DoUnLoginSpecs {
-    public static RequestSpecification requestLogin = with()
-            .basePath("/rest/dologin")
+public class GetUserFullSpecs {
+    public static RequestSpecification userInfo = with()
+            .basePath("/rest/getuserfull")
             .log().uri()
-            .log().all()
+            .log().body()
             .contentType(JSON);
-    public static ResponseSpecification responseLogin = new ResponseSpecBuilder()
+    public static ResponseSpecification userInfoResponse = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .log(LogDetail.ALL)
-            .expectBody("result", is(false))
             .build();
 
 }

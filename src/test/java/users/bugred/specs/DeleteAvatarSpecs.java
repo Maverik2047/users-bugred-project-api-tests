@@ -9,17 +9,15 @@ import static io.restassured.RestAssured.with;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
 
-
-public class DoUnLoginSpecs {
-    public static RequestSpecification requestLogin = with()
-            .basePath("/rest/dologin")
+public class DeleteAvatarSpecs {
+    public static RequestSpecification requestDelete = with()
+            .basePath("/rest/deleteavatar")
             .log().uri()
-            .log().all()
+            .log().body()
             .contentType(JSON);
-    public static ResponseSpecification responseLogin = new ResponseSpecBuilder()
+    public static ResponseSpecification responseDelete = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .log(LogDetail.ALL)
-            .expectBody("result", is(false))
+            .expectBody("status",is("ok"))
             .build();
-
 }
