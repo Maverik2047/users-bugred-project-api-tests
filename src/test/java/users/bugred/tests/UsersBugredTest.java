@@ -7,6 +7,7 @@ import users.bugred.models.lombok.*;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static users.bugred.helpers.CustomAllureListener.withCustomTemplates;
 import static users.bugred.specs.AddAvatarSpecs.responseAvatar;
 import static users.bugred.specs.AddAvatarSpecs.userAvatar;
 import static users.bugred.specs.DeleteAvatarSpecs.requestDelete;
@@ -33,6 +34,7 @@ public class UsersBugredTest extends TestBase {
 
 
         String actualEmail = given()
+                .filter(withCustomTemplates())
                 .spec(register)
                 .body(registerCreate)
                 .when()
@@ -53,6 +55,7 @@ public class UsersBugredTest extends TestBase {
         doLogin.setEmail("manager@mail.ru");
         doLogin.setPassword("1");
         given()
+                .filter(withCustomTemplates())
                 .spec(loginRequest)
                 .body(doLogin)
                 .when()
@@ -71,6 +74,7 @@ public class UsersBugredTest extends TestBase {
         falseLogin.setEmail(testData.email);
         falseLogin.setPassword(testData.password);
         given()
+                .filter(withCustomTemplates())
                 .spec(requestLogin)
                 .body(falseLogin)
                 .when()
@@ -87,6 +91,7 @@ public class UsersBugredTest extends TestBase {
         addAvatar.setEmail("sammy.breitenberg@example.com");
 
         AddAvatarResponse avatarResponse = given()
+                .filter(withCustomTemplates())
                 .spec(userAvatar)
                 .body(addAvatar)
                 .when()
@@ -104,6 +109,7 @@ public class UsersBugredTest extends TestBase {
         AddAvatar deleteAvatar = new AddAvatar();
         deleteAvatar.setEmail("marylou.cassin@example.com");
         given()
+                .filter(withCustomTemplates())
                 .spec(requestDelete)
                 .body(deleteAvatar)
                 .when()
@@ -119,6 +125,7 @@ public class UsersBugredTest extends TestBase {
         GetUserFull getUser = new GetUserFull();
         getUser.setEmail("marylou.cassin@example.com");
         GetUserFullResponse userResponse = given()
+                .filter(withCustomTemplates())
                 .spec(userInfo)
                 .body(getUser)
                 .when()
