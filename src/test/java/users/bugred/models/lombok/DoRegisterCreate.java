@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class doRegisterCreate {
+public class DoRegisterCreate {
     String email;
     String name;
-    Integer password;
+    String password;
 
 }
