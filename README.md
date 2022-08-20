@@ -37,7 +37,7 @@
 ## 🎆 Jenkins job
 <img src="images/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a>  <a target="_blank" href="https://jenkins.autotests.cloud/job/users.bugred_Project_API/">Jenkins job</a>
 <p align="center">
-<a href="https://jenkins.autotests.cloud/job/011-maslogirl-FinalProject-API/"><img src="images/screens/job.png" alt="Jenkins"/></a>
+<img src="images/screens/job.png" alt="Jenkins"/></a>
 </p>
 
 
