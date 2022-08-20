@@ -6,5 +6,5 @@ public class TestData {
     Faker faker = new Faker();
     String email = faker.internet().safeEmailAddress();
     String name = faker.name().fullName();
-    String password = String.valueOf(faker.random().nextInt(1, 10));
+    String password = String.valueOf(faker.random().nextInt(1000, 10000));
 }
